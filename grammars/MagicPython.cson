@@ -37,7 +37,7 @@ repository:
   statement:
     patterns: [
       {
-        include: "#import"
+        include: "#importar"
       }
       {
         include: "#class-declaration"
@@ -278,8 +278,8 @@ repository:
         match: "\\b(?<!\\.)como\\b(?=.*[:\\\\])"
       }
       {
-        name: "keyword.control.import.python"
-        comment: "other legal use of `as` is in an import"
+        name: "keyword.control.importar.python"
+        comment: "other legal use of `as` is in an importar"
         match: "\\b(?<!\\.)como\\b"
       }
       {
@@ -609,7 +609,7 @@ repository:
             (?:
               (y | o | ~ | en | es)                         (?# 1)
               |
-              (para | si | otro | aguardar | (?:ceder(?:\\s+from)?))  (?# 2)
+              (para | si | otro | aguardar | (?:ceder(?:\\s+desde)?))  (?# 2)
             )
           (?!\\s*:)\\b
       
@@ -1056,18 +1056,18 @@ repository:
   "fstring-formatting-singe-brace":
     name: "invalid.illegal.brace.python"
     match: "(}(?!}))"
-  import:
+  importar:
     comment: '''
-      Import statements used to correctly mark `from`, `import`, and `as`
+      importar statements used to correctly mark `from`, `importar`, and `as`
       
     '''
     patterns: [
       {
-        begin: "\\b(?<!\\.)(from)\\b(?=.+import)"
-        end: "$|(?=import)"
+        begin: "\\b(?<!\\.)(desde)\\b(?=.+importar)"
+        end: "$|(?=importar)"
         beginCaptures:
           "1":
-            name: "keyword.control.import.python"
+            name: "keyword.control.importar.python"
         patterns: [
           {
             name: "punctuation.separator.period.python"
@@ -1079,15 +1079,15 @@ repository:
         ]
       }
       {
-        begin: "\\b(?<!\\.)(import)\\b"
+        begin: "\\b(?<!\\.)(importar)\\b"
         end: "$"
         beginCaptures:
           "1":
-            name: "keyword.control.import.python"
+            name: "keyword.control.importar.python"
         patterns: [
           {
-            name: "keyword.control.import.python"
-            match: "\\b(?<!\\.)as\\b"
+            name: "keyword.control.importar.python"
+            match: "\\b(?<!\\.)como\\b"
           }
           {
             include: "#expression"
@@ -1166,7 +1166,7 @@ repository:
       }
       {
         name: "support.type.metaclass.python"
-        match: "\\bmetaclass\\b"
+        match: "\\bmetaclase\\b"
       }
       {
         include: "#illegal-names"
@@ -1800,7 +1800,7 @@ repository:
           | TuberíaRota | ProcessoInfantil
           | (Conexión (Abortada | Rechazada | Reiniciada)?)
           | EOF | MedioAmbiente | ArchivoExiste | ArchivoNoEncontrado
-          | FlotatingPoint | IO | Importación | Muesca | Índice | Interrumpido
+          | FlotatingPoint | IO | importaración | Muesca | Índice | Interrumpido
           | EsADirectorio | NoADirectorio | Permiso | ProcesoBùsqueda
           | SeAcabóElTiempo
           | Clave | Búsqueda | Memoria | Nombre | NoSeHaImplementado | OS | Desbordamiento
@@ -1809,7 +1809,7 @@ repository:
           | Valor | Windows | CeroDivisión | MóduloNoEncontrado
         ) Error
       |
-        ((Pendiente)?Deprecation | TiempoDeEjecución | Sintaxis | Usario | Futuro | Importar
+        ((Pendiente)?Deprecation | TiempoDeEjecución | Sintaxis | Usario | Futuro | importar
           | Unicode | Bytes | Recurso
         )? Aviso
       |
@@ -1949,7 +1949,7 @@ repository:
       "1":
         name: "keyword.control.flow.python"
       "2":
-        name: "keyword.control.import.python"
+        name: "keyword.control.importar.python"
   "special-variables":
     match: '''
       (?x)
@@ -1994,7 +1994,7 @@ repository:
   "illegal-object-name":
     comment: "It's illegal to name class or function \"True\""
     name: "keyword.illegal.name.python"
-    match: "\\b(True|False|None)\\b"
+    match: "\\b(Verdadero|Falso|Ningún)\\b"
   "illegal-anno":
     name: "invalid.illegal.annotation.python"
     match: "->"
