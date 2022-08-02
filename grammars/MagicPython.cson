@@ -1954,7 +1954,7 @@ repository:
     match: '''
       (?x)
         \\b (?<!\\.) (?:
-          (self) | (cls)
+          (mismo) | (cls)
         )\\b
       
     '''
