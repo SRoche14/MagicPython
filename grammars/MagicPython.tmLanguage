@@ -156,10 +156,10 @@
                 <key>match</key>
                 <string>(?x)
   (?&lt;!\.)\b(
-    bool | bytes | float | int | object | str
-    | List | Dict | Iterable | Sequence | Set
-    | FrozenSet | Callable | Union | Tuple
-    | Any | None
+     bool | bytes | flotador | núm | objeto | str
+                  | Lista | Dicc | Itreable | Secuencia | Conjunto
+                  | FrozenSet | Llamable | Unión | Tupla
+                  | Cualquiara | Ningún
   )\b
 </string>
               </dict>
@@ -449,9 +449,9 @@ it's probably control flow like:
             <key>match</key>
             <string>(?x)
   \b(?&lt;!\.)(
-    async | continue | del | assert | break | finally | for
-    | from | elif | else | if | except | pass | raise
-    | return | try | while | with
+    async | continuar | borrar | afirmar | cortar | finalmente | para
+              | desde | otro_si | otro | si | excepto | pasar | plantear
+              | devolver | intentar | mientras | con
   )\b
 </string>
           </dict>
@@ -922,9 +922,9 @@ E.g. "arr[idx](args)"
         <string>(?x)
     \b(?&lt;!\.)
       (?:
-        (and | or | not | in | is)                         (?# 1)
+        (y | o | ~ | en | es)                        (?# 1)
         |
-        (for | if | else | await | (?:yield(?:\s+from)?))  (?# 2)
+       (para | si | otro | aguardar | (?:ceder(?:\\s+from)?))  (?# 2)
       )
     (?!\s*:)\b
 
@@ -2244,7 +2244,7 @@ correctly identify the "in" as a control flow keyword.
       <dict>
         <key>match</key>
         <string>(?x)
-  \b ((self)|(cls)) \b \s*(?:(,)|(?=\)))
+  \b ((mismo)|(cls)) \b \s*(?:(,)|(?=\)))
 </string>
         <key>captures</key>
         <dict>
@@ -2816,26 +2816,26 @@ correctly identify the "in" as a control flow keyword.
         <key>match</key>
         <string>(?x) (?&lt;!\.) \b(
   (
-    Arithmetic | Assertion | Attribute | Buffer | BlockingIO
-    | BrokenPipe | ChildProcess
-    | (Connection (Aborted | Refused | Reset)?)
-    | EOF | Environment | FileExists | FileNotFound
-    | FloatingPoint | IO | Import | Indentation | Index | Interrupted
-    | IsADirectory | NotADirectory | Permission | ProcessLookup
-    | Timeout
-    | Key | Lookup | Memory | Name | NotImplemented | OS | Overflow
-    | Reference | Runtime | Recursion | Syntax | System
-    | Tab | Type | UnboundLocal | Unicode(Encode|Decode|Translate)?
-    | Value | Windows | ZeroDivision | ModuleNotFound
-  ) Error
-|
-  ((Pending)?Deprecation | Runtime | Syntax | User | Future | Import
-    | Unicode | Bytes | Resource
-  )? Warning
-|
-  SystemExit | Stop(Async)?Iteration
-  | KeyboardInterrupt
-  | GeneratorExit | (Base)?Exception
+    Aritmética | Afirmación | Atributo | Búfer | BloqueandoIO
+          | TuberíaRota | ProcessoInfantil
+          | (Conexión (Abortada | Rechazada | Reiniciada)?)
+          | EOF | MedioAmbiente | ArchivoExiste | ArchivoNoEncontrado
+          | FlotatingPoint | IO | Importación | Muesca | Índice | Interrumpido
+          | EsADirectorio | NoADirectorio | Permiso | ProcesoBùsqueda
+          | SeAcabóElTiempo
+          | Clave | Búsqueda | Memoria | Nombre | NoSeHaImplementado | OS | Desbordamiento
+          | Referencia | TiempoDeEjecución | Recursión | Sintaxis | Sistema
+          | Pestaña | Tipo | SueltoLocal | Unicode(Codificar|Descodificar|Traducir)?
+          | Valor | Windows | CeroDivisión | MóduloNoEncontrado
+        ) Error
+      |
+        ((Pendiente)?Deprecation | TiempoDeEjecución | Sintaxis | Usario | Futuro | Importar
+          | Unicode | Bytes | Recurso
+        )? Aviso
+      |
+        SistemaSalida | Para(Async)?Iteración
+        | TecladoInterruptado
+        | GeneradorSalida | (Base)?Excepción
 )\b
 </string>
       </dict>
@@ -2849,14 +2849,14 @@ correctly identify the "in" as a control flow keyword.
             <key>match</key>
             <string>(?x)
   (?&lt;!\.) \b(
-    __import__ | abs | all | any | ascii | bin | breakpoint | callable
-    | chr | compile | copyright | credits | delattr | dir | divmod
-    | enumerate | eval | exec | exit | filter | format | getattr
-    | globals | hasattr | hash | help | hex | id | input
-    | isinstance | issubclass | iter | len | license | locals | map
-    | max | memoryview | min | next | oct | open | ord | pow | print
-    | quit | range | reload | repr | reversed | round
-    | setattr | sorted | sum | vars | zip
+  __importar__ | abs | todo | cualquiara | ascii | contenedor | punto_de_ruptura | llamable
+              | chr | compilar | copyright | créditos | borraratri | dir | divmod
+              | enumerar | eval | ejec | salir | filtro | formato | obteneratri
+              | globals | teneratri | hash | ayudar | hex | id | entrada
+              | escaso | essubclase | iter | lar | licencia | locales | mapa
+              | max | memoriavista | min | siguiente | oct | abrir | ord | pot | imprimir
+              | dejar | rango | recargar | repr | invertido | redondear
+              | poneratri | ordenado | suma | vars | comprimir
   )\b
 </string>
           </dict>
@@ -2866,8 +2866,8 @@ correctly identify the "in" as a control flow keyword.
             <key>match</key>
             <string>(?x)
   (?&lt;!\.) \b(
-    file | reduce | intern | raw_input | unicode | cmp | basestring
-    | execfile | long | xrange
+      archivo | reducir | pasante | entrada_sin_procesar | unicode | cmp | baseguirnalda
+              | ejecarchivo | largo | xrango
   )\b
 </string>
           </dict>
@@ -2880,14 +2880,14 @@ correctly identify the "in" as a control flow keyword.
         <key>match</key>
         <string>(?x)
   (?&lt;!\.) \b(
-    bool | bytearray | bytes | classmethod | complex | dict
-    | float | frozenset | int | list | object | property
-    | set | slice | staticmethod | str | tuple | type
-
-    (?# Although 'super' is not a type, it's related to types,
-        and is special enough to be highlighted differently from
-        other built-ins)
-    | super
+     bool | matrizdebytes | bytes | métododeclase | complejo | dicc
+          | flotador | conjuntocongelado | núm | lista | objeto | propriedad
+          | conjunto | rebanar | métodoestático | guir | tupla | tipo
+      
+          (?# Although 'super' is not a type, it's related to types,
+              and is special enough to be highlighted differently from
+              other built-ins)
+          | súper
   )\b
 </string>
       </dict>
@@ -2901,24 +2901,24 @@ indirectly through syntactic constructs
         <string>(?x)
   \b(
     __(?:
-      abs | add | aenter | aexit | aiter | and | anext | await
-      | bool | call | ceil | cmp | coerce | complex | contains
-      | copy | deepcopy | del | delattr | delete | delitem
-      | delslice | dir | div | divmod | enter | eq | exit | float
-      | floor | floordiv | format | ge | get | getattr
-      | getattribute | getinitargs | getitem | getnewargs
-      | getslice | getstate | gt | hash | hex | iadd | iand | idiv
-      | ifloordiv | ilshift | imod | imul | index | init
-      | instancecheck | int | invert | ior | ipow | irshift | isub
-      | iter | itruediv | ixor | le | len | long | lshift | lt
-      | missing | mod | mul | ne | neg | new | next | nonzero | oct | or
-      | pos | pow | radd | rand | rdiv | rdivmod | reduce
-      | reduce_ex | repr | reversed | rfloordiv | rlshift | rmod
-      | rmul | ror | round | rpow | rrshift | rshift | rsub
-      | rtruediv | rxor | set | setattr | setitem | setslice
-      | setstate | sizeof | str | sub | subclasscheck | truediv
-      | trunc | unicode | xor | matmul | rmatmul | imatmul
-      | init_subclass | set_name | fspath | bytes | prepare
+     abs | añadir | aentrar | asalir | aiter | and | anext | await
+            | bool | llamar | techo | cmp | coaccionar | complejo | contener
+            | copia | copiaprofunda | borrar | borraratri | borrar | borrarartículo
+            | borrarparte | dir | div | divmod | entrar | eq | salir | flotador
+            | piso | pisodiv | formato | ge | obtener | obteneratri
+            | obteneratributo | obtenerparámetrosiniciales | obtenerartículo | obtenerparámetrosnuevos
+            | obtenerparte | obtenerestado | gt | hash | hex | iañadir | iy | idiv
+            | ipisodiv | iizqmover | imod | imul | índice | inicializar
+            | casochequeo | núm | invertir | ior | ipot | idmover | isub
+            | iter | idivverdadero | ixor | le | lar | largo | izqmover | lt
+            | perdido | mod | mul | ne | neg | nuevo | siguiente | nocero | oct | or
+            | pos | pot | radd | azar | ddiv | ddivmod | reducir
+            | reducir_ex | repr | invertido | dpisodiv | dizqmover | dmod
+            | dmul | dor | redondear | dpot | ddmover | dmover | dsub
+            | ddivverdadero | dxor | poner | poneratri | ponerartículo | ponerparte
+            | ponerestado | tamañode | str | sub | subclasechequeo | divverdadero
+            | trunc | unicode | xor | matmul | dmatmul | imatmul
+            | subclase_initializar | poner_nombre | fscamino | bytes | preparar
     )__
   )\b
 </string>
@@ -2939,12 +2939,12 @@ indirectly through syntactic constructs
         <string>(?x)
   \b(
     __(?:
-      all | bases | builtins | class | class_getitem | code | debug
-      | defaults | dict | doc | file | func | kwdefaults | members
-      | metaclass | methods | module | mro | mro_entries | name
-      | qualname | post_init | self | signature | slots | subclasses
-      | version | weakref | wrapped | annotations | classcell
-      | spec | path | package | future | traceback
+       todo | bases | incorporados | clase | clase_obtenerartículo | código | depurar
+            | los_valores_por_defecto | dicc | doc | archivo | func | kw_los_valores_por_defecto | miembros
+            | metaclase | métodos | módulo | mro | mro_entradas | nombre
+            | qualnombre | post_inicial | mismo | firma | ranuras | subclases
+            | version | débilref | envuelto | anotaciones | classcelda
+            | espec | camino | paquete | futuro | localizaratrás
     )__
   )\b
 </string>
@@ -2977,13 +2977,13 @@ indirectly through syntactic constructs
         <string>(?x)
   \b(?:
     (
-      and | assert | async | await | break | class | continue | def
-      | del | elif | else | except | finally | for | from | global
-      | if | in | is | (?&lt;=\.)lambda | lambda(?=\s*[\.=])
-      | nonlocal | not | or | pass | raise | return | try | while | with
-      | yield
-    ) | (
-      as | import
+       y | afirmar | async | aguardar | cortar | clase | continuar | def
+            | borrar | otro_si | otro | excepto | finalmente | para | desde | global
+            | si | en | es | (?<=\\.)lambda | lambda(?=\\s*[\\.=])
+            | ~local | ~ | o | pasar | plantear | devolver | intentar | mientras | con
+            | ceder
+          ) | (
+            como | importar
     )
   )\b
 </string>
@@ -3373,7 +3373,7 @@ indirectly through syntactic constructs
       <key>codetags</key>
       <dict>
         <key>match</key>
-        <string>(?:\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\b)</string>
+        <string>(?:\b(NOTAR|XXX|HACKEAR|ARREGLARME|BICHO|HACER)\b)</string>
         <key>captures</key>
         <dict>
           <key>1</key>
