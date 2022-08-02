@@ -1907,12 +1907,12 @@ repository:
       (?x)
         \\b(
           __(?:
-            all | bases | builtins | class | class_getitem | code | debug
-            | defaults | dict | doc | file | func | kwdefaults | members
-            | metaclass | methods | module | mro | mro_entries | name
-            | qualname | post_init | self | signature | slots | subclasses
-            | version | weakref | wrapped | annotations | classcell
-            | spec | path | package | future | traceback
+            todo | bases | incorporados | clase | clase_obtenerartículo | código | depurar
+            | los_valores_por_defecto | dicc | doc | archivo | func | kw_los_valores_por_defecto | miembros
+            | metaclase | métodos | módulo | mro | mro_entradas | nombre
+            | qualnombre | post_inicial | mismo | firma | ranuras | subclases
+            | version | débilref | envuelto | anotaciones | classcelda
+            | espec | camino | paquete | futuro | localizaratrás
           )__
         )\\b
       
@@ -1934,13 +1934,13 @@ repository:
       (?x)
         \\b(?:
           (
-            and | assert | async | await | break | class | continue | def
-            | del | elif | else | except | finally | for | from | global
-            | if | in | is | (?<=\\.)lambda | lambda(?=\\s*[\\.=])
-            | nonlocal | not | or | pass | raise | return | try | while | with
-            | yield
+            y | afirmar | async | aguardar | cortar | clase | continuar | def
+            | borrar | otro_si | otro | excepto | finalmente | para | desde | global
+            | si | en | es | (?<=\\.)lambda | lambda(?=\\s*[\\.=])
+            | ~local | ~ | o | pasar | plantear | devolver | intentar | mientras | con
+            | ceder
           ) | (
-            as | import
+            como | importar
           )
         )\\b
       
@@ -2176,7 +2176,7 @@ repository:
       }
     ]
   codetags:
-    match: "(?:\\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\\b)"
+    match: "(?:\\b(NOTAR|XXX|HACKEAR|ARREGLARME|BICHO|HACER)\\b)"
     captures:
       "1":
         name: "keyword.codetag.notation.python"
