@@ -1826,7 +1826,7 @@ repository:
         match: '''
           (?x)
             (?<!\\.) \\b(
-              __import__ | abs | todo | cualquiara | ascii | contenedor | punto_de_ruptura | llamable
+              __importar__ | abs | todo | cualquiara | ascii | contenedor | punto_de_ruptura | llamable
               | chr | compilar | copyright | créditos | borraratri | dir | divmod
               | enumerar | eval | ejec | salir | filtro | formato | obteneratri
               | globals | teneratri | hash | ayudar | hex | id | entrada
