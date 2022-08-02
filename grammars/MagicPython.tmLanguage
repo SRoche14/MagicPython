@@ -57,7 +57,7 @@
         <array>
           <dict>
             <key>include</key>
-            <string>#import</string>
+            <string>#importar</string>
           </dict>
           <dict>
             <key>include</key>
@@ -433,15 +433,15 @@ it's probably control flow like:
         pass
 </string>
             <key>match</key>
-            <string>\b(?&lt;!\.)as\b(?=.*[:\\])</string>
+            <string>\b(?&lt;!\.)como\b(?=.*[:\\])</string>
           </dict>
           <dict>
             <key>name</key>
-            <string>keyword.control.import.python</string>
+            <string>keyword.control.importar.python</string>
             <key>comment</key>
-            <string>other legal use of `as` is in an import</string>
+            <string>other legal use of `as` is in an importar</string>
             <key>match</key>
-            <string>\b(?&lt;!\.)as\b</string>
+            <string>\b(?&lt;!\.)como\b</string>
           </dict>
           <dict>
             <key>name</key>
@@ -461,7 +461,7 @@ it's probably control flow like:
             <key>match</key>
             <string>(?x)
   \b(?&lt;!\.)(
-    global | nonlocal
+    global | ~local
   )\b
 </string>
           </dict>
@@ -469,7 +469,7 @@ it's probably control flow like:
             <key>name</key>
             <string>storage.type.class.python</string>
             <key>match</key>
-            <string>\b(?&lt;!\.)(class)\b</string>
+            <string>\b(?&lt;!\.)(clase)\b</string>
           </dict>
         </array>
       </dict>
@@ -924,7 +924,7 @@ E.g. "arr[idx](args)"
       (?:
         (y | o | ~ | en | es)                        (?# 1)
         |
-       (para | si | otro | aguardar | (?:ceder(?:\\s+from)?))  (?# 2)
+       (para | si | otro | aguardar | (?:ceder(?:\\s+desde)?))  (?# 2)
       )
     (?!\s*:)\b
 
@@ -989,7 +989,7 @@ E.g. "arr[idx](args)"
             <key>name</key>
             <string>constant.language.python</string>
             <key>match</key>
-            <string>\b(True|False|None|NotImplemented|Ellipsis)\b</string>
+            <string>\b(Verdadero|Falso|Ningún|No_se_ha_implementado|Elipsis)\b</string>
           </dict>
           <dict>
             <key>include</key>
@@ -1605,24 +1605,24 @@ E.g. "arr[idx](args)"
         <key>match</key>
         <string>(}(?!}))</string>
       </dict>
-      <key>import</key>
+      <key>importar</key>
       <dict>
         <key>comment</key>
-        <string>Import statements used to correctly mark `from`, `import`, and `as`
+        <string>importar statements used to correctly mark `from`, `importar`, and `as`
 </string>
         <key>patterns</key>
         <array>
           <dict>
             <key>begin</key>
-            <string>\b(?&lt;!\.)(from)\b(?=.+import)</string>
+            <string>\b(?&lt;!\.)(desde)\b(?=.+importar)</string>
             <key>end</key>
-            <string>$|(?=import)</string>
+            <string>$|(?=importar)</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>keyword.control.import.python</string>
+                <string>keyword.control.importar.python</string>
               </dict>
             </dict>
             <key>patterns</key>
@@ -1641,7 +1641,7 @@ E.g. "arr[idx](args)"
           </dict>
           <dict>
             <key>begin</key>
-            <string>\b(?&lt;!\.)(import)\b</string>
+            <string>\b(?&lt;!\.)(importar)\b</string>
             <key>end</key>
             <string>$</string>
             <key>beginCaptures</key>
@@ -1649,16 +1649,16 @@ E.g. "arr[idx](args)"
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>keyword.control.import.python</string>
+                <string>keyword.control.importar.python</string>
               </dict>
             </dict>
             <key>patterns</key>
             <array>
               <dict>
                 <key>name</key>
-                <string>keyword.control.import.python</string>
+                <string>keyword.control.importar.python</string>
                 <key>match</key>
-                <string>\b(?&lt;!\.)as\b</string>
+                <string>\b(?&lt;!\.)como\b</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -1677,7 +1677,7 @@ E.g. "arr[idx](args)"
             <string>meta.class.python</string>
             <key>begin</key>
             <string>(?x)
-  \s*(class)\s+
+  \s*(clase)\s+
     (?=
       [[:alpha:]_]\w* \s* (:|\()
     )
@@ -1784,7 +1784,7 @@ E.g. "arr[idx](args)"
             <key>name</key>
             <string>support.type.metaclass.python</string>
             <key>match</key>
-            <string>\bmetaclass\b</string>
+            <string>\bmetaclase\b</string>
           </dict>
           <dict>
             <key>include</key>
@@ -2820,7 +2820,7 @@ correctly identify the "in" as a control flow keyword.
           | TuberíaRota | ProcessoInfantil
           | (Conexión (Abortada | Rechazada | Reiniciada)?)
           | EOF | MedioAmbiente | ArchivoExiste | ArchivoNoEncontrado
-          | FlotatingPoint | IO | Importación | Muesca | Índice | Interrumpido
+          | FlotatingPoint | IO | importaración | Muesca | Índice | Interrumpido
           | EsADirectorio | NoADirectorio | Permiso | ProcesoBùsqueda
           | SeAcabóElTiempo
           | Clave | Búsqueda | Memoria | Nombre | NoSeHaImplementado | OS | Desbordamiento
@@ -2829,7 +2829,7 @@ correctly identify the "in" as a control flow keyword.
           | Valor | Windows | CeroDivisión | MóduloNoEncontrado
         ) Error
       |
-        ((Pendiente)?Deprecation | TiempoDeEjecución | Sintaxis | Usario | Futuro | Importar
+        ((Pendiente)?Deprecation | TiempoDeEjecución | Sintaxis | Usario | Futuro | importar
           | Unicode | Bytes | Recurso
         )? Aviso
       |
@@ -2997,7 +2997,7 @@ indirectly through syntactic constructs
           <key>2</key>
           <dict>
             <key>name</key>
-            <string>keyword.control.import.python</string>
+            <string>keyword.control.importar.python</string>
           </dict>
         </dict>
       </dict>
@@ -3006,7 +3006,7 @@ indirectly through syntactic constructs
         <key>match</key>
         <string>(?x)
   \b (?&lt;!\.) (?:
-    (self) | (cls)
+    (mismo) | (cls)
   )\b
 </string>
         <key>captures</key>
@@ -3079,7 +3079,7 @@ indirectly through syntactic constructs
         <key>name</key>
         <string>keyword.illegal.name.python</string>
         <key>match</key>
-        <string>\b(True|False|None)\b</string>
+        <string>\b(Verdadero|Falso|Ningún)\b</string>
       </dict>
       <key>illegal-anno</key>
       <dict>
